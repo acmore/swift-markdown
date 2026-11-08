@@ -618,6 +618,9 @@ struct MarkupParser {
         if !options.contains(.disableSourcePosOpts) {
             cmarkOptions |= CMARK_OPT_SOURCEPOS
         }
+        if options.contains(.strikethroughDoubleTilde) {
+            cmarkOptions |= CMARK_OPT_STRIKETHROUGH_DOUBLE_TILDE
+        }
         
         let parser = cmark_parser_new(cmarkOptions)
         
